@@ -22,7 +22,12 @@ public class DialogeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NextFrase();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+         NextFrase();
+        }
+          
     }
 
     void OnTriggerEnter(Collider other)
@@ -38,9 +43,9 @@ public class DialogeManager : MonoBehaviour
             }
             else
             {
-                textoDelDialogo.text = "jajaj alto bot roman";
+                textoDelDialogo.text = "YA HABLAMOS!!";
                 dialogueUI.SetActive(true);
-                textoBoton.text = "Cerrar";
+
             }
         }
         
@@ -63,14 +68,11 @@ public class DialogeManager : MonoBehaviour
         {
             textoDelDialogo.text = frasesDialogo[posicionFrase];
             posicionFrase++;
-            if (posicionFrase == frasesDialogo.Length)
-            {
-                textoBoton.text = "Cerrar";
-            }
+          
         }
         else
         {
-            dialogueUI.SetActive(false);
+            //dialogueUI.SetActive(false);
             hasTalked = true;
         }
         
